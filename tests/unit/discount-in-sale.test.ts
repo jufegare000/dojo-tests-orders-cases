@@ -14,9 +14,4 @@ describe('discount in total sale', () => { // the tests container
         assert(discount===0)
     });
 
-    it('must get 10% of discount', () => {
-        let discount: number = ApplianceDiscountServiceImplemented.validateApplianceQuantity(applianceNotDiscountOrder);
-        assert(discount===10)
-    });
-
 });
