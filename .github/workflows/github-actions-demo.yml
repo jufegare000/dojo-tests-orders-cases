@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ feat/gh-actns ]
   pull_request:
-    branches: [ main ]
+    branches: [ feat/gh-actns ]
 
 jobs:
   build:
