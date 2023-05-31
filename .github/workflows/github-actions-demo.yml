@@ -7,6 +7,15 @@ on:
     branches: [ feat/gh-actns ]
 
 jobs:
+
+  pre-test:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Read step file
+      uses: ./.github/actions
+      with:
+      test_input: "test-string-value"
+
   test:
 
     runs-on: ubuntu-latest
@@ -26,6 +35,7 @@ jobs:
 
       
   build:
+    needs: [test]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -35,6 +45,7 @@ jobs:
         run: echo "Run  build............"
 
   deploy:
+    needs: [build]
     runs-on: ubuntu-latest
     strategy:
       matrix:
