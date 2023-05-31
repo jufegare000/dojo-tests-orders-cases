@@ -1,6 +1,0 @@
-name: testing splitted file
-  runs:
-  using: composite
-    - name: echo test
-      shell: nash
-      run: echo "holiiii"

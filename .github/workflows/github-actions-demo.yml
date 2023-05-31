@@ -5,7 +5,16 @@ on:
   pull_request:
     branches: [ feat/gh-actns ]
 jobs:
+
+  pre-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: read file
+        uses: ./.github/test-step
+        with:
+          test_input: "test-string-value"
   test:
+    needs: [pre-test]
     runs-on: ubuntu-latest
     strategy:
       matrix:
