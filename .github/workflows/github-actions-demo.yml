@@ -10,11 +10,11 @@ jobs:
 
   pre-test:
     runs-on: ubuntu-latest
-  steps:
-    - name: Read step file
-      uses: ./.github/actions
-      with:
-      test_input: "test-string-value"
+    steps:
+      - name: Read step file
+        uses: ./.github/actions
+        with:
+        test_input: "test-string-value"
 
   test:
 
