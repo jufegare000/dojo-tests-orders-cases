@@ -7,7 +7,7 @@ on:
     branches: [ feat/gh-actns ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -17,19 +17,31 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Checkout
-      - name: test-step
-        uses: ./.github/actions/test-step
-        with:
-          test_input: "hello world from multiple files"
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm run build --if-present
       - run: npm test
 
+      
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Build artifact
+        run: echo "Run  build............"
+
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Deploy to AWS
+        run: echo "Installing serverless framework"
       - name: Install Serverless Framework
         run: npm install -g serverless
 
