@@ -1,4 +1,4 @@
-name: test-step
+name: action
   description: test action
   inputs:
     test_input:
