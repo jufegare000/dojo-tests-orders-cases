@@ -1,5 +1,5 @@
 name: action
-  description: test action
+  description: test-action
   inputs:
     test_input:
       description: key
