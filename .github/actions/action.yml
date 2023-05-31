@@ -1,8 +1,0 @@
-name: action
-  runs:
-    using: composite
-    steps:
-      - name: echo test
-        shell: bash
-        run: |
-          echo ${{inputs.test_input}}

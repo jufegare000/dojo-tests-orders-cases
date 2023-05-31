@@ -6,20 +6,11 @@ on:
   pull_request:
     branches: [ feat/gh-actns ]
 
+defaults:
+  runs-on: ubuntu-latest
+
 jobs:
-
-  pre-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-      - name: Read splitted file
-        uses: ./.github/actions
-
   test:
-
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
@@ -36,22 +27,13 @@ jobs:
       
   build:
     needs: [test]
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
       - name: Build artifact
         run: echo "Run  build............"
 
   deploy:
     needs: [build]
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
-
       - uses: actions/checkout@v3
       - name: Deploy to AWS
         run: echo "Installing serverless framework"
