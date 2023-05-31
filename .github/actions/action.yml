@@ -1,5 +1,4 @@
 name: action
-  description: test-action
   runs:
     using: composite
     steps:
