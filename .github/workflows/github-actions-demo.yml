@@ -11,8 +11,9 @@ jobs:
   pre-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Read step file
+      - name: Checkout Repo
       - uses: actions/checkout@v3
+      - name: Read splitted file
         uses: ./.github/actions/test-step.yml
         with:
           test_input: "test-string-value"
