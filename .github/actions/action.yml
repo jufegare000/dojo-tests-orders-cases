@@ -1,9 +1,5 @@
 name: action
   description: test-action
-  inputs:
-    test_input:
-      description: key
-      required: true
   runs:
     using: composite
     steps:

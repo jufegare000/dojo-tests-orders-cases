@@ -15,8 +15,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Read splitted file
         uses: ./.github/actions
-        with:
-          test_input: "test-string-value"
 
   test:
 
