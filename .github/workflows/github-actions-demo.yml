@@ -6,11 +6,10 @@ on:
   pull_request:
     branches: [ feat/gh-actns ]
 
-defaults:
-  runs-on: ubuntu-latest
-
 jobs:
   test:
+
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
@@ -27,13 +26,22 @@ jobs:
       
   build:
     needs: [test]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - name: Build artifact
         run: echo "Run  build............"
 
   deploy:
     needs: [build]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
+
       - uses: actions/checkout@v3
       - name: Deploy to AWS
         run: echo "Installing serverless framework"
