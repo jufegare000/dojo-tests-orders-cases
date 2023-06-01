@@ -1,0 +1,4 @@
+- name: Read splitted file
+  uses: ./.github/actions/test-step
+  with:
+    test_input: "test-string-value"
