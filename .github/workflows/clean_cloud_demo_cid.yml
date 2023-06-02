@@ -21,7 +21,7 @@
         - run: npm ci
         - run: npm test
     build:
-      needs: [build]
+      needs: [test]
       runs-on: ubuntu-latest
       steps:
         - name: A future implementation of a build stage
