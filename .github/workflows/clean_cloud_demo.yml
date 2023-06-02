@@ -2,9 +2,9 @@ name: Clean cloud cicd
 
 on:
   push:
-    branches: [ feat/jfgr-deploy ]
+    branches: [ master ]
   pull_request:
-    branches: [ feat/jfgr-deploy ]
+    branches: [ master ]
 
 jobs:
   build:
