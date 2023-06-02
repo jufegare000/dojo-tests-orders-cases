@@ -1,0 +1,17 @@
+name: Clean cloud cicd
+
+on:
+  push:
+    branches: [ feat/jfgr-deploy ]
+  pull_request:
+    branches: [ feat/jfgr-deploy ]
+
+jobs:
+  build:
+
+  runs-on: ubuntu-latest
+
+  steps:
+    - uses: actions/checkout@v3
+    - name: Hello world from clean cloud
+      run: echo "hello wordl"
