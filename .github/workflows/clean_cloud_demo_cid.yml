@@ -24,4 +24,4 @@
       runs-on: ubuntu-latest
       steps:
         - name: A future implementation of a build stage
-        - run: echo "run build"
+          run: echo "run build"
